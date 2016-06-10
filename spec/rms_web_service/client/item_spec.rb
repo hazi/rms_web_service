@@ -37,7 +37,7 @@ describe RmsWebService::Client::Item do
   describe '.get' do
     before do
       stub_request(:get, "https://api.rms.rakuten.co.jp/es/1.0/item/get?itemUrl=test001")
-      .to_return(:status => 200, body: fixture('get.xml'))
+      .to_return(:status => 200, body: fixture('item/get.xml'))
     end
     subject {client.get('test001')}
     it {is_expected.to be_a RWS::Response::Item::Get}
@@ -46,7 +46,7 @@ describe RmsWebService::Client::Item do
   describe '.delete' do
     before do
       stub_request(:post, "https://api.rms.rakuten.co.jp/es/1.0/item/delete")
-      .to_return(:status => 200, body: fixture('delete.xml'))
+      .to_return(:status => 200, body: fixture('item/delete.xml'))
     end
     subject {client.delete('test001')}
     it {is_expected.to be_a RWS::Response::Item::Delete}
@@ -55,7 +55,7 @@ describe RmsWebService::Client::Item do
   describe '.insert' do
     before do
       stub_request(:post, "https://api.rms.rakuten.co.jp/es/1.0/item/insert")
-      .to_return(:status => 200, body: fixture('insert.xml'))
+      .to_return(:status => 200, body: fixture('item/insert.xml'))
     end
     subject {client.insert({
       :item_url => 'test001',
@@ -68,7 +68,7 @@ describe RmsWebService::Client::Item do
   describe '.update' do
     before do
       stub_request(:post, "https://api.rms.rakuten.co.jp/es/1.0/item/update")
-      .to_return(:status => 200, body: fixture('update.xml'))
+      .to_return(:status => 200, body: fixture('item/update.xml'))
     end
     subject {client.update({:item_url => 'test001', :item_price => '10000'})}
     it {is_expected.to be_a RWS::Response::Item::Update}
@@ -77,7 +77,7 @@ describe RmsWebService::Client::Item do
   describe '.search' do
     before do
       stub_request(:get, "https://api.rms.rakuten.co.jp/es/1.0/item/search?itemName=test001&itemPriceFrom=1")
-      .to_return(:status => 200, body: fixture('search.xml'))
+      .to_return(:status => 200, body: fixture('item/search.xml'))
     end
     subject {client.search(:item_name => 'test001', :item_price_from => 1)}
     it {is_expected.to be_a RWS::Response::Item::Search}
@@ -86,7 +86,7 @@ describe RmsWebService::Client::Item do
   describe '.items_update' do
     before do
       stub_request(:post, "https://api.rms.rakuten.co.jp/es/1.0/items/update")
-      .to_return(:status => 200, body: fixture('items_update.xml'))
+      .to_return(:status => 200, body: fixture('item/items_update.xml'))
     end
     subject {client.items_update([
       {:item_url => 'test001', :item_price => 100},

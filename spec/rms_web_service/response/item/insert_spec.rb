@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'rms_web_service'
 
 describe RmsWebService::Response::Item::Insert do
-  let(:api) {described_class.new(fixture('insert.xml'))}
+  let(:api) {described_class.new(fixture('item/insert.xml'))}
 
   describe 'attributes' do
     it 'should respond to SystemResult' do

@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'rms_web_service'
 
 describe RmsWebService::Response::Item::Update do
-  let(:api) {described_class.new(fixture('update.xml'))}
+  let(:api) {described_class.new(fixture('item/update.xml'))}
 
   describe 'attributes' do
     it 'should respond to SystemResult' do

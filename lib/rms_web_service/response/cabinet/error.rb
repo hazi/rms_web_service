@@ -1,9 +1,9 @@
 #encoding: utf-8
 module RmsWebService
   module Response
-    module Item
+    module Cabinet
       class Error
-        extend RmsWebService::Response::Item::ErrorConst
+        extend RmsWebService::Response::Cabinet::ErrorConst
         def self.parse(xml)
           raise ArgumentError, "Argument must be a String class. but argument is #{xml.class}." unless xml.class == String
           hash = Hash.new

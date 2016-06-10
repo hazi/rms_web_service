@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'rms_web_service'
 
 describe RmsWebService::Response::Item::Search do
-  subject(:api) {described_class.new(fixture('search.xml'))}
+  subject(:api) {described_class.new(fixture('item/search.xml'))}
   it 'should be an array of RWS::Response::Item::Get' do
     expect(api[0]).to be_a RWS::Response::Item::Get
   end
