@@ -25,13 +25,13 @@ module RmsWebService
       end
 
       def get_inventory_external(args)
-        xml = {:getInventoryExternal => {:file => args}}.to_xml(:root => 'request', :camelize => :lower, :skip_types => true)
+        xml = {:getInventoryExternal => args}.to_xml(:root => 'request', :camelize => :lower, :skip_types => true)
         request = connection("inventory/get_inventory_external").post {|req| req.body = xml}
         ::RWS::Response::Inventory::GetInventoryExternal.new(request.body)
       end
 
       def update_inventory_external(args)
-        xml = {:updateInventoryExternal => {:file => args}}.to_xml(:root => 'request', :camelize => :lower, :skip_types => true)
+        xml = {:updateInventoryExternal => args}.to_xml(:root => 'request', :camelize => :lower, :skip_types => true)
         request = connection("inventory/update_inventory_external").post {|req| req.body = xml}
         ::RWS::Response::Inventory::UpdateInventoryExternal.new(request.body)
       end
