@@ -7,6 +7,7 @@ describe RmsWebService::Response::Cabinet::File::Insert do
   describe 'attributes' do
     it 'should respond to SystemResult' do
       expect(api).to respond_to :status
+      expect(api.status.message).to eq "OK"
     end
 
     it 'should respond to CabinetFileInsertResult' do
