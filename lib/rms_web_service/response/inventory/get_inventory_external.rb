@@ -8,7 +8,7 @@ module RmsWebService
         end
 
         def success?
-          @result_code == "1"
+          @result_code == "0"
         end
       end
     end
