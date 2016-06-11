@@ -20,13 +20,27 @@ module RmsWebService
         end
       end
 
+      def multipart_connection(method)
+        Faraday.new(:url => endpoint(method)) do |c|
+          c.request :multipart
+          c.request :url_encoded
+          c.adapter Faraday.default_adapter
+          c.headers['Authorization'] = self.configuration.encoded_keys
+        end
+      end
+
       def endpoint(method)
         @endpoint || Endpoint + method
       end
 
       def file_insert(args)
+        file = args.delete(:file)
         xml = {:fileInsertRequest => {:file => args}}.to_xml(:root => 'request', :camelize => :lower, :skip_types => true)
-        request = connection("cabinet/file/insert").post {|req| req.body = xml}
+        payload = {
+          :xml => xml,
+          :file => file, 
+        }
+        request = multipart_connection("cabinet/file/insert").post("", payload)
         ::RWS::Response::Cabinet::File::Insert.new(request.body)
       end
 

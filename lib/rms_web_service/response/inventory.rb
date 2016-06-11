@@ -1,0 +1,5 @@
+require 'rms_web_service/response/inventory/error_const'
+require 'rms_web_service/response/inventory/error'
+require 'rms_web_service/response/inventory/parser'
+require 'rms_web_service/response/inventory/status'
+require 'rms_web_service/response/inventory/update_inventory_external'
