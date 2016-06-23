@@ -4,11 +4,11 @@ module RmsWebService
   module Response
     module Cabinet 
       class Parser < Array
-        attr_accessor :status
+        attr_accessor :status, :raw_xml
         def initialize(xml)
-          xml = xml.read if xml.is_a?(::File)
-          @parsed_xml = Nokogiri::XML.parse(xml)
-          @status = Cabinet::Status.new(xml)
+          @raw_xml = xml.read if xml.is_a?(::File)
+          @parsed_xml = Nokogiri::XML.parse(@raw_xml)
+          @status = Cabinet::Status.new(@raw_xml)
           @result_code = @parsed_xml.xpath("//resultCode").first.content if @parsed_xml.xpath("//resultCode").present?
           @errors = []
         end
