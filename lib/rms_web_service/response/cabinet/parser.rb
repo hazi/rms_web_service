@@ -6,7 +6,7 @@ module RmsWebService
       class Parser < Array
         attr_accessor :status, :raw_xml
         def initialize(xml)
-          @raw_xml = xml.read if xml.is_a?(::File)
+          @raw_xml = xml.is_a?(::File) ? xml.read : xml
           @parsed_xml = Nokogiri::XML.parse(@raw_xml)
           @status = Cabinet::Status.new(@raw_xml)
           @result_code = @parsed_xml.xpath("//resultCode").first.content if @parsed_xml.xpath("//resultCode").present?
