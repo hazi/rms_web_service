@@ -9,7 +9,7 @@ module RmsWebService
           xml = xml.read if xml.is_a?(::File)
           @parsed_xml = Nokogiri::XML.parse(xml)
           @status = Cabinet::Status.new(xml)
-          @code = @parsed_xml.xpath("//code").first.content if @parsed_xml.xpath("//code").present?
+          @result_code = @parsed_xml.xpath("//resultCode").first.content if @parsed_xml.xpath("//resultCode").present?
           @errors = []
         end
 
