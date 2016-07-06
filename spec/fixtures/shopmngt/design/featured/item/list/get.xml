@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+    <status>
+        <interfaceId>shop.design.featured.item.list.get</interfaceId>
+        <systemStatus>OK</systemStatus>
+        <message>OK</message>
+        <requestId>714a4983-555f-42d9-aeea-89dae89f2f55</requestId>
+        <requests>
+            <lossLeaderId>1</lossLeaderId>
+        </requests>
+    </status>
+    <tns:shopMngApiResponse
+        xmlns:tns="http://rakuten.co.jp/rms/mall/shop/mng/api/model/resource">
+        <resultCode>N000</resultCode>
+        <resultMessageList>
+            <resultMessage>
+                <code>N000</code>
+                <message>Succeeded.</message>
+            </resultMessage>
+        </resultMessageList>
+        <result xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:type="tns:layoutLossLeaderResourceModel">
+            <layoutLossLeaderList>
+                <layoutLossLeader>
+                    <shopId>202317</shopId>
+                    <lossLeaderId>2764</lossLeaderId>
+                    <name>目玉商品01</name>
+                    <imageSize>100</imageSize>
+                    <imageScaleStandard>0</imageScaleStandard>
+                    <dispItemFlag>1</dispItemFlag>
+                    <dispPriceFlag>1</dispPriceFlag>
+                    <textPosition>1</textPosition>
+                    <wrapLength>120</wrapLength>
+                    <imageCols>4</imageCols>
+                    <defaultFlag>1</defaultFlag>
+                    <lastUpdate>2008-10-23T16:33:51+09:00</lastUpdate>
+                </layoutLossLeader>
+                <layoutLossLeader>
+                    <shopId>202317</shopId>
+                    <lossLeaderId>2780</lossLeaderId>
+                    <name>猫</name>
+                    <imageSize>100</imageSize>
+                    <imageScaleStandard>0</imageScaleStandard>
+                    <dispItemFlag>1</dispItemFlag>
+                    <dispPriceFlag>1</dispPriceFlag>
+                    <textPosition>1</textPosition>
+                    <wrapLength>120</wrapLength>
+                    <imageCols>4</imageCols>
+                    <defaultFlag>0</defaultFlag>
+                    <lastUpdate>2008-07-29T11:51:51+09:00</lastUpdate>
+                </layoutLossLeader>
+            </layoutLossLeaderList>
+        </result>
+    </tns:shopMngApiResponse>
+</result>

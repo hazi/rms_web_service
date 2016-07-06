@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+   <status>
+      <interfaceId>shop.design.description.small.list.get</interfaceId>
+      <systemStatus>OK</systemStatus>
+      <message>OK</message>
+      <requestId>714a4983-555f-42d9-aeea-89dae89f2f55</requestId>
+      <requests>
+        <textSmallId>1</textSmallId>
+      </requests>
+   </status>
+   <tns:shopMngApiResponse
+      xmlns:tns="http://rakuten.co.jp/rms/mall/shop/mng/api/model/resource">
+      <resultCode>N000</resultCode>
+      <resultMessageList>
+         <resultMessage>
+            <code>N000</code>
+            <message>Succeeded.</message>
+         </resultMessage>
+      </resultMessageList>
+      <result xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:type="tns:layoutTextSmallResourceModel">
+         <layoutTextSmallList>
+            <layoutTextSmall>
+               <textSmallId>58374</textSmallId>
+               <name>共通説明文（小）01</name>
+               <text></text>
+               <textLink></textLink>
+               <defaultFlag>1</defaultFlag>
+               <lastUpdate>2008-07-29T11:19:54+09:00</lastUpdate>
+            </layoutTextSmall>
+            <layoutTextSmall>
+               <textSmallId>58552</textSmallId>
+               <name>name</name>
+               <text>text</text>
+               <textLink>http://www.rakuten.co.jp</textLink>
+               <defaultFlag>0</defaultFlag>
+               <lastUpdate>2008-09-12T21:43:19+09:00</lastUpdate>
+            </layoutTextSmall>
+         </layoutTextSmallList>
+      </result>
+   </tns:shopMngApiResponse>
+</result>

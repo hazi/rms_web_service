@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+   <status>
+      <interfaceId>shop.design.description.large.list.get</interfaceId>
+      <systemStatus>OK</systemStatus>
+      <message>OK</message>
+      <requestId>714a4983-555f-42d9-aeea-89dae89f2f55</requestId>
+      <requests>
+        <textLargeId>1</textLargeId>
+      </requests>
+   </status>
+   <tns:shopMngApiResponse
+      xmlns:tns="http://rakuten.co.jp/rms/mall/shop/mng/api/model/resource">
+      <resultCode>N000</resultCode>
+      <resultMessageList>
+         <resultMessage>
+            <code>N000</code>
+            <message>Succeeded.</message>
+         </resultMessage>
+      </resultMessageList>
+      <result xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:type="tns:layoutTextLargeResourceModel">
+         <layoutTextLargeList>
+            <layoutTextLarge>
+               <textLargeId>1805</textLargeId>
+               <name>test1</name>
+               <text>testtext1</text>
+               <defaultFlag>0</defaultFlag>
+               <lastUpdate>2014-10-07T15:33:37+09:00</lastUpdate>
+            </layoutTextLarge>
+            <layoutTextLarge>
+               <textLargeId>1806</textLargeId>
+               <name>test2</name>
+               <text>testtext2</text>
+               <defaultFlag>1</defaultFlag>
+               <lastUpdate>2014-10-07T15:33:52+09:00</lastUpdate>
+            </layoutTextLarge>
+         </layoutTextLargeList>
+      </result>
+   </tns:shopMngApiResponse>
+</result>
