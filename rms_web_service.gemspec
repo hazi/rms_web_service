@@ -1,7 +1,7 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rms_web_service/version'
+require "rms_web_service/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "rms_web_service"

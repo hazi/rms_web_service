@@ -1,29 +1,29 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe RmsWebService::Configuration do
-  let(:config){ described_class.new(service_secret: service_secret, license_key: license_key) }
-  let(:service_secret){ "dummy_service_secret_ssss" }
-  let(:license_key){ "dummy_license_key_sssssss" }
+  let(:config) { described_class.new(service_secret: service_secret, license_key: license_key) }
+  let(:service_secret) { "dummy_service_secret_ssss" }
+  let(:license_key) { "dummy_license_key_sssssss" }
   # Actual string is 25 characters.
 
   describe "#service_secret" do
-    subject{ config.service_secret }
+    subject { config.service_secret }
     it { is_expected.to eq(service_secret) }
   end
 
   describe "#license_key" do
-    subject{ config.license_key }
+    subject { config.license_key }
     it { is_expected.to eq(license_key) }
   end
 
   describe "#encoded_keys" do
     context "with service_secret and license_key" do
-      let(:encoded_string){
+      let(:encoded_string) {
         encoded_credentials = Base64.strict_encode64("#{service_secret}:#{license_key}")
         "ESA #{encoded_credentials}"
       }
 
-      subject{ config.encoded_keys }
+      subject { config.encoded_keys }
       it { is_expected.to eq(encoded_string) }
       it { is_expected.not_to include("\n") }
     end
@@ -32,7 +32,7 @@ describe RmsWebService::Configuration do
       before { config.service_secret = nil }
 
       it "should raise ParameterError" do
-        expect{ config.encoded_keys }.to raise_error(RmsWebService::ParameterError, /service_secret/)
+        expect { config.encoded_keys }.to raise_error(RmsWebService::ParameterError, /service_secret/)
       end
     end
 
@@ -40,7 +40,7 @@ describe RmsWebService::Configuration do
       before { config.license_key = nil }
 
       it "should raise ParameterError" do
-        expect{ config.encoded_keys }.to raise_error(RmsWebService::ParameterError, /license_key/)
+        expect { config.encoded_keys }.to raise_error(RmsWebService::ParameterError, /license_key/)
       end
     end
   end

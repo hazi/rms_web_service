@@ -2,9 +2,9 @@ module RmsWebService
   module Response
     module ShopManagement
       module Design
-        module Description 
-          module Large 
-            module List 
+        module Description
+          module Large
+            module List
               class Get < Parser
                 attr_accessor :code
                 def initialize(xml)

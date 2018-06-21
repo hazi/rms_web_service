@@ -1,6 +1,6 @@
 module RmsWebService
   module Response
-    module ShopManagement 
+    module ShopManagement
       class Status < Parser
         def initialize(xml)
           set_attributes Nokogiri::XML.parse(xml).xpath("//status").children

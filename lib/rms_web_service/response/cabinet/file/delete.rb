@@ -1,7 +1,7 @@
 module RmsWebService
   module Response
     module Cabinet
-      module File 
+      module File
         class Delete < Parser
           def initialize(xml)
             super

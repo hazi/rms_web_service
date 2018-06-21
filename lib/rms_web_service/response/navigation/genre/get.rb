@@ -1,7 +1,7 @@
 module RmsWebService
   module Response
-    module Navigation 
-      module Genre 
+    module Navigation
+      module Genre
         class Get < Parser
           attr_accessor :code
           def initialize(xml)

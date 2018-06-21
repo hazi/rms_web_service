@@ -1,7 +1,7 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe RmsWebService do
-  describe '.configure' do
+  describe ".configure" do
   end
 
   describe ".configuration" do
