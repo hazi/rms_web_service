@@ -7,7 +7,7 @@ module RmsWebService
         class Get < Parser
           def initialize(xml)
             super
-            set_attributes @parsed_xml.xpath("//cabinetUsageGetResult").children
+            set_attributes @result.dig(:cabinet_usage_get_result)
           end
 
           def success?

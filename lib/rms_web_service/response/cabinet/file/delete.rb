@@ -7,7 +7,7 @@ module RmsWebService
         class Delete < Parser
           def initialize(xml)
             super
-            set_attributes @parsed_xml.xpath("//cabinetFileDeleteResult").children
+            set_attributes @result.dig(:cabinet_file_delete_result)
           end
 
           def success?

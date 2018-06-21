@@ -4,8 +4,8 @@ module RmsWebService
   module Response
     module Cabinet
       class Status < Parser
-        def initialize(xml)
-          set_attributes Nokogiri::XML.parse(xml).xpath("//status").children
+        def initialize(hash)
+          set_attributes(hash.dig(:status))
         end
       end
     end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "nokogiri"
+require "nori"
 
 module RmsWebService
   module Response
@@ -9,17 +9,21 @@ module RmsWebService
         attr_accessor :status, :raw_xml
         def initialize(xml)
           @raw_xml = xml.is_a?(::File) ? xml.read : xml
-          @parsed_xml = Nokogiri::XML.parse(@raw_xml)
-          @status = Cabinet::Status.new(@raw_xml)
-          @errors = []
+          @result  = parser(raw_xml)[:result]
+          @status  = Cabinet::Status.new(@result)
         end
 
         def set_attributes(args)
-          args.each { |s| set_attribute(s.name, s.content) }
+          args.each { |key, value| set_attribute(key, value) }
         end
 
         def set_attribute(name, content)
-          define_singleton_method(name.underscore) { content }
+          define_singleton_method(name) { content }
+        end
+
+        def parser(xml)
+          @parser ||= Nori.new(convert_tags_to: lambda { |tag| tag.snakecase.to_sym })
+          @parser.parse(xml)
         end
       end
     end

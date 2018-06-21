@@ -7,7 +7,7 @@ module RmsWebService
         class Insert < Parser
           def initialize(xml)
             super
-            set_attributes @parsed_xml.xpath("//cabinetFileInsertResult").children
+            set_attributes @result.dig(:cabinet_file_insert_result)
           end
 
           def success?
