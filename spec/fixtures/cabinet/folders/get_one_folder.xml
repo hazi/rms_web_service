@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <status>
+    <interfaceId>cabinet.folders.get</interfaceId>
+    <systemStatus>OK</systemStatus>
+    <message>OK</message>
+    <requestId>b3247888-49c6-4aba-90c6-707c583e1127</requestId>
+    <requests>
+      <offset>1</offset>
+      <limit>100</limit>
+    </requests>
+  </status>
+  <cabinetFoldersGetResult>
+    <resultCode>0</resultCode>
+    <folderAllCount>1</folderAllCount>
+    <folderCount>1</folderCount>
+    <folders>
+      <folder>
+        <FolderId>0</FolderId>
+        <FolderName>基本フォルダ</FolderName>
+        <FolderNode>0</FolderNode>
+        <FolderPath>/</FolderPath>
+        <FileCount>100</FileCount>
+        <FileSize>500.111</FileSize>
+        <TimeStamp>2018-06-21 12:00:00</TimeStamp>
+      </folder>
+    </folders>
+  </cabinetFoldersGetResult>
+</result>

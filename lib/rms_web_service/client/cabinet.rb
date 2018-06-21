@@ -26,6 +26,15 @@ module RmsWebService
         request = connection("cabinet/usage/get").get
         ::RWS::Response::Cabinet::Usage::Get.new(request.body)
       end
+
+      def folders_get(offset: 1, limit: 100)
+        request = connection("cabinet/folders/get").get do |req|
+          req.params[:offset] = offset
+          req.params[:limit] = limit
+        end
+        ::RWS::Response::Cabinet::Folders::Get.new(request.body)
+      end
+      alias :folders :folders_get
     end
   end
 end

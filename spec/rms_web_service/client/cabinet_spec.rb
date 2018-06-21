@@ -64,4 +64,22 @@ describe RmsWebService::Client::Cabinet do
     subject { client.usage_get }
     it { is_expected.to be_a RWS::Response::Cabinet::Usage::Get }
   end
+
+  describe "#folders_get" do
+    before do
+      stub_request(:get, "https://api.rms.rakuten.co.jp/es/1.0/cabinet/folders/get?limit=100&offset=1")
+      .to_return(status: 200, body: fixture("cabinet/folders/get.xml"))
+    end
+    subject { client.folders_get }
+    it { is_expected.to be_a RWS::Response::Cabinet::Folders::Get }
+  end
+
+  describe "#folders" do
+    before do
+      stub_request(:get, "https://api.rms.rakuten.co.jp/es/1.0/cabinet/folders/get?limit=100&offset=1")
+      .to_return(status: 200, body: fixture("cabinet/folders/get.xml"))
+    end
+    subject { client.folders }
+    it { is_expected.to be_a RWS::Response::Cabinet::Folders::Get }
+  end
 end
