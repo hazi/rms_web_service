@@ -21,6 +21,11 @@ module RmsWebService
         request = connection("cabinet/file/delete").post { |req| req.body = xml }
         ::RWS::Response::Cabinet::File::Delete.new(request.body)
       end
+
+      def usage_get
+        request = connection("cabinet/usage/get").get
+        ::RWS::Response::Cabinet::Usage::Get.new(request.body)
+      end
     end
   end
 end

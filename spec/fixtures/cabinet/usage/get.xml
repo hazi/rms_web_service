@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <status>
+    <interfaceId>cabinet.usage.get</interfaceId>
+    <systemStatus>OK</systemStatus>
+    <message>OK</message>
+    <requestId>a247c0d9-c464-463b-9bc3-acb2a006a09c</requestId>
+  </status>
+  <cabinetUsageGetResult>
+    <resultCode>0</resultCode>
+    <MaxSpace>5000</MaxSpace>
+    <FolderMax>500</FolderMax>
+    <FileMax>500</FileMax>
+    <UseSpace>0.000</UseSpace>
+    <AvailSpace>500000.000</AvailSpace>
+    <UseFolderCount>0</UseFolderCount>
+    <AvailFolderCount>500</AvailFolderCount>
+  </cabinetUsageGetResult>
+</result>
