@@ -28,7 +28,10 @@ describe RmsWebService::Client::Item do
       it { is_expected.to eq default_url + "item/get" }
     end
     context "specify URL" do
-      let(:api) { described_class.new(service_secret: service_secret, license_key: license_key, endpoint: specified_url) }
+      let(:api) do
+        described_class.new(service_secret: service_secret, license_key: license_key, endpoint: specified_url)
+      end
+
       subject { api.endpoint("item/get") }
       it { is_expected.to eq specified_url }
     end

@@ -3,7 +3,11 @@ require "spec_helper"
 require "rms_web_service"
 
 describe RWS::Response::Item::Error do
-  let(:res) { { "error_id"=>"errorId", "field_id"=>"503", "msg"=>"error message", "list_index"=>"1", "list_index2"=>"2", "field"=>"item_price", "field_name"=>"販売価格" } }
+  let(:res) do
+    { "error_id"=>"errorId", "field_id"=>"503", "msg"=>"error message", "list_index"=>"1",
+      "list_index2"=>"2", "field"=>"item_price", "field_name"=>"販売価格" }
+  end
+
   subject { described_class.parse(fixture("item/update.xml").read) }
   it("should return formatted error") { is_expected.to eq res }
 

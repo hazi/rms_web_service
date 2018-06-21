@@ -11,7 +11,7 @@ module RmsWebService
           @status = Item::Status.new(@raw_xml)
           @code = @parsed_xml.xpath("//code").first.content if @parsed_xml.xpath("//code").present?
           @errors = []
-          @parsed_xml.xpath("//errorMessages").children.each { |error| @errors << Error.parse(error.to_s) } if @parsed_xml.xpath("//errorMessages").present?
+          @parsed_xml.xpath("//errorMessages").children.each { |error| @errors << Error.parse(error.to_s) }
         end
 
         def set_attributes(args)

@@ -1,37 +1,7 @@
-require "faraday"
-require "active_support"
-require "active_support/core_ext"
-
 module RmsWebService
   module Client
-    class ShopManagement
+    class ShopManagement < Base
       Endpoint = "https://api.rms.rakuten.co.jp/es/1.0/"
-      attr_accessor :configuration
-
-      def initialize(args={})
-        @configuration = ::RmsWebService::Configuration.new(args)
-        @endpoint = args[:endpoint]
-      end
-
-      def connection(method)
-        Faraday.new(url: endpoint(method)) do |c|
-          c.adapter Faraday.default_adapter
-          c.headers["Authorization"] = self.configuration.encoded_keys
-        end
-      end
-
-      def multipart_connection(method)
-        Faraday.new(url: endpoint(method)) do |c|
-          c.request :multipart
-          c.request :url_encoded
-          c.adapter Faraday.default_adapter
-          c.headers["Authorization"] = self.configuration.encoded_keys
-        end
-      end
-
-      def endpoint(method)
-        @endpoint || Endpoint + method
-      end
 
       def dsgn_navitemplate_list_get(opt={})
         request = connection("shopmngt/design/navitemplate/list/get").get do |req|

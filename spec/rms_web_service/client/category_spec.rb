@@ -28,7 +28,9 @@ describe RmsWebService::Client::Category do
       it { is_expected.to eq default_url + "categoryapi/shop/categories/get" }
     end
     context "specify URL" do
-      let(:api) { described_class.new(service_secret: service_secret, license_key: license_key, endpoint: specified_url) }
+      let(:api) do
+        described_class.new(service_secret: service_secret, license_key: license_key, endpoint: specified_url)
+      end
       subject { api.endpoint("categoryapi/shop/categories/get") }
       it { is_expected.to eq specified_url }
     end
