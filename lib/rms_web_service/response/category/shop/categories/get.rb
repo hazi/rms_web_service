@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module RmsWebService
   module Response
-    module Category 
-      module Shop 
-        module Categories 
+    module Category
+      module Shop
+        module Categories
           class Get < Parser
             attr_accessor :code
             def initialize(xml)

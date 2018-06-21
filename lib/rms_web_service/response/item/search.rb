@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RmsWebService
   module Response
     module Item
@@ -5,7 +7,7 @@ module RmsWebService
         attr_accessor :code
         def initialize(xml)
           super
-          @parsed_xml.xpath("//items").children.each {|item| self << Get.new(item.to_xml)}
+          @parsed_xml.xpath("//items").children.each { |item| self << Get.new(item.to_xml) }
         end
 
         def success?

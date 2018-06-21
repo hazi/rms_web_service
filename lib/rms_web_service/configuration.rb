@@ -1,4 +1,6 @@
-require 'base64'
+# frozen_string_literal: true
+
+require "base64"
 
 module RmsWebService
   class Configuration
@@ -10,8 +12,8 @@ module RmsWebService
     end
 
     def encoded_keys
-        raise RmsWebService::ParameterError, 'service_secret is required' unless service_secret.present?
-        raise RmsWebService::ParameterError, 'license_key is required' unless license_key.present?
+      raise RmsWebService::ParameterError, "service_secret is required" unless service_secret.present?
+        raise RmsWebService::ParameterError, "license_key is required" unless license_key.present?
 
         "ESA " + Base64.strict_encode64(service_secret + ":" + license_key)
     end

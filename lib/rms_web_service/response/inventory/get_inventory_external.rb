@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module RmsWebService
   module Response
-    module Inventory 
+    module Inventory
       class GetInventoryExternal < Parser
         def initialize(xml)
           super
