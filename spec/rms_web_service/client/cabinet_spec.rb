@@ -65,6 +65,15 @@ describe RmsWebService::Client::Cabinet do
     it { is_expected.to be_a RWS::Response::Cabinet::Usage::Get }
   end
 
+  describe "#usage" do
+    before do
+      stub_request(:get, "https://api.rms.rakuten.co.jp/es/1.0/cabinet/usage/get")
+      .to_return(status: 200, body: fixture("cabinet/usage/get.xml"))
+    end
+    subject { client.usage }
+    it { is_expected.to be_a RWS::Response::Cabinet::Usage::Get }
+  end
+
   describe "#folders_get" do
     before do
       stub_request(:get, "https://api.rms.rakuten.co.jp/es/1.0/cabinet/folders/get?limit=100&offset=1")
