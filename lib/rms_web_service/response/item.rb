@@ -1,6 +1,7 @@
+require 'rms_web_service/response/item/error_const'
+require 'rms_web_service/response/item/error'
 require 'rms_web_service/response/item/parser'
 require 'rms_web_service/response/item/status'
-require 'rms_web_service/response/item/error'
 require 'rms_web_service/response/item/get'
 require 'rms_web_service/response/item/insert'
 require 'rms_web_service/response/item/update'

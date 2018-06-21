@@ -30,13 +30,25 @@ module RmsWebService
       end
 
       def insert(args)
-        xml = {:itemInsertRequest => {:item => args}}.to_xml(:root => 'request', :camelize => :lower, :skip_types => true)
+        xml = case args
+              when String
+                args
+              when Hash then
+                {:itemInsertRequest => {:item => args}}.to_xml(:root => 'request', :camelize => :lower, :skip_types => true)
+              end
+
         request = connection("item/insert").post {|req| req.body = xml}
         ::RWS::Response::Item::Insert.new(request.body)
       end
 
       def update(args)
-        xml = {:itemUpdateRequest => {:item => args}}.to_xml(:root => 'request', :camelize => :lower, :skip_types => true)
+        xml = case args
+              when String
+                args
+              when Hash then
+                {:itemUpdateRequest => {:item => args}}.to_xml(:root => 'request', :camelize => :lower, :skip_types => true)
+              end
+
         request = connection("item/update").post {|req| req.body = xml}
         ::RWS::Response::Item::Update.new(request.body)
       end

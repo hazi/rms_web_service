@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+    <status>
+      <interfaceId>shop.design.navitemplate.list.get</interfaceId>
+      <systemStatus>OK</systemStatus>
+      <message>OK</message>
+      <requestId>714a4983-555f-42d9-aeea-89dae89f2f55</requestId>
+      <requests>
+        <layoutCommonId>1</layoutCommonId>
+      </requests>
+   </status>
+    <tns:shopMngApiResponse>
+        <resultCode>N000</resultCode>
+        <resultMessageList>
+            <resultMessage>
+                <code>N000</code>
+                <message>Succeeded.</message>
+            </resultMessage>
+        </resultMessageList>
+        <result xsi:type="tns:shopLayoutCommonResourceModel">
+            <shopLayoutCommonList>
+                <shopLayoutCommon>
+                    <layoutCommonId>10059</layoutCommonId>
+                    <defaultFlag>0</defaultFlag>
+                    <name>テンプレート</name>
+                    <captionHeader>ヘッダー</captionHeader>
+                    <captionFooter>フッター</captionFooter>
+                    <captionLeft>レフトナビ</captionLeft>
+                    <lastUpdate>2009-12-22T18:22:40+09:00</lastUpdate>
+                </shopLayoutCommon>
+                <shopLayoutCommon>
+                    <layoutCommonId>49440</layoutCommonId>
+                    <defaultFlag>0</defaultFlag>
+                    <name>会社概要/R-Mailページ移行用</name>
+                    <captionHeader>
+                    </captionHeader>
+                    <captionFooter>
+                    </captionFooter>
+                    <captionLeft>
+                    </captionLeft>
+                    <lastUpdate>2013-05-10T17:08:36+09:00</lastUpdate>
+                </shopLayoutCommon>
+            </shopLayoutCommonList>
+        </result>
+    </tns:shopMngApiResponse>
+</result>

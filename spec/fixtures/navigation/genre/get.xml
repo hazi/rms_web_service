@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+	<status>
+		<interfaceId>navigation.genre.get</interfaceId>
+		<systemStatus>OK</systemStatus>
+		<message>OK</message>
+		<requestId>714a4983-555f-42d9-aeea-89dae89f2f45</requestId>
+		<requests>
+			<genreId>500040</genreId>
+		</requests>
+	</status>
+	<navigationGenreGetResult>
+		<status>Success</status>
+		<genreLastUpdateDate>2014-05-18T00:00:00+09:00</genreLastUpdateDate>
+		<tagLastUpdateDate>2014-05-18T00:00:00+09:00</tagLastUpdateDate>
+		<genre>
+			<genreId>500040</genreId>
+			<genreName>アーティスト名・I</genreName>
+			<itemRegisterFlg>
+				<directory>1</directory>
+				<auction>1</auction>
+			</itemRegisterFlg>
+			<ancestorGenre>
+				<genre>
+					<genreId>101240</genreId>
+					<genreName>CD・DVD・楽器</genreName>
+					<itemRegisterFlg>1</itemRegisterFlg>
+					<itemRegisterSaFlg>1</itemRegisterSaFlg>
+				</genre>
+				<genre>
+					<genreId>101311</genreId>
+					<genreName>CD</genreName>
+					<itemRegisterFlg>1</itemRegisterFlg>
+					<itemRegisterSaFlg>1</itemRegisterSaFlg>
+				</genre>
+      </ancestorGenre>
+			<childGenre />
+    </genre>
+	</navigationGenreGetResult>
+</result>

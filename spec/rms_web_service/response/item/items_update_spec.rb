@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'rms_web_service'
 
 describe RmsWebService::Response::Item::ItemsUpdate do
-  subject(:api) {described_class.new(fixture('items_update.xml'))}
+  subject(:api) {described_class.new(fixture('item/items_update.xml'))}
   it 'should be an array of RWS::Response::Item::Update' do
     expect(api[0]).to be_a RWS::Response::Item::Update
   end

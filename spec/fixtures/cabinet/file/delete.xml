@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+	<status>
+		<interfaceId>cabinet.file.delete</interfaceId>
+		<systemStatus>OK</systemStatus>
+		<message>OK</message>
+		<requestId>714a4983-555f-42d9-aeea-89dae89f2f45</requestId>
+	</status>
+	<cabinetFileDeleteResult>
+		<resultCode>0</resultCode>
+	</cabinetFileDeleteResult>
+</result>

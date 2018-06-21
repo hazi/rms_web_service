@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'rms_web_service'
 
 describe RmsWebService::Response::Item::Delete do
-  let(:api) {described_class.new(fixture('delete.xml'))}
+  let(:api) {described_class.new(fixture('item/delete.xml'))}
 
   describe 'attributes' do
     it 'should respond to SystemResult' do
