@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "rms_web_service/version"
 require "rms_web_service/configuration"
 require "rms_web_service/client"

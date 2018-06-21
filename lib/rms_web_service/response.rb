@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "rms_web_service/response/item"
 require "rms_web_service/response/cabinet"
 require "rms_web_service/response/inventory"

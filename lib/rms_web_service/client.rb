@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "rms_web_service/client/base"
 require "rms_web_service/client/item"
 require "rms_web_service/client/cabinet"

@@ -25,6 +25,13 @@ Style/MethodDefParentheses:
 Style/BracesAroundHashParameters:
   Enabled: true
 
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  Exclude:
+    - Gemfile
+    - Guardfile
+    - Rakefile
+
 Layout/IndentationWidth:
   Enabled: true
 
