@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require "rms_web_service"
 
 describe RmsWebService::Response::Item::ItemsUpdate do
   subject(:api) { described_class.new(fixture("item/items_update.xml")) }

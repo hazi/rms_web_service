@@ -2,7 +2,6 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require "rms_web_service"
 
 describe RWS::Response::Item::Error do
   let(:res) do
