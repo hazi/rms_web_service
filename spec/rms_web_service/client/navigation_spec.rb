@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require "rms_web_service"
 
 describe RmsWebService::Client::Navigation do
   subject(:client) { described_class.new(service_secret: service_secret, license_key: license_key) }

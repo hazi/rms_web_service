@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require "rms_web_service"
 
 describe RmsWebService::Response::Cabinet::File::Delete do
   let(:api) { described_class.new(fixture("cabinet/file/delete.xml")) }

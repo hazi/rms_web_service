@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require "rms_web_service"
 
 describe RmsWebService::Response::Navigation::Genre::Get do
   let(:api) { described_class.new(fixture("navigation/genre/get.xml")) }
