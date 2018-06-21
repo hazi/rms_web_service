@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require "rms_web_service"
 
 describe RmsWebService::Response::Item::Insert do
   let(:api) { described_class.new(fixture("item/insert.xml")) }

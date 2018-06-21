@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require "rms_web_service"
 
 describe RmsWebService::Response::ShopManagement::Design::Description::Large::List::Get do
   let(:api) { described_class.new(fixture("shopmngt/design/description/large/list/get.xml")) }
