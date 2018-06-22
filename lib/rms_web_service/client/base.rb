@@ -7,6 +7,8 @@ require "active_support/core_ext"
 module RmsWebService
   module Client
     class Base
+      Endpoint = "https://api.rms.rakuten.co.jp/es/1.0/"
+
       attr_accessor :configuration
 
       def initialize(args={})

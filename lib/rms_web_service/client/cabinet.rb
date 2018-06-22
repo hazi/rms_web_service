@@ -3,15 +3,10 @@
 module RmsWebService
   module Client
     class Cabinet < Base
-      Endpoint = "https://api.rms.rakuten.co.jp/es/1.0/"
-
       def file_insert(args)
         file = args.delete(:file)
         xml = convert_xml(fileInsertRequest: { file: args })
-        payload = {
-          xml: xml,
-          file: file,
-        }
+        payload = { xml: xml, file: file }
         request = multipart_connection("cabinet/file/insert").post("", payload)
         ::RWS::Response::Cabinet::File::Insert.new(request.body)
       end
