@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <status>
+    <interfaceId>cabinet.files.search</interfaceId>
+    <systemStatus>OK</systemStatus>
+    <message>OK</message>
+    <requestId>38472488-d1ee-4024-99aa-dcf67226752c</requestId>
+    <requests>
+      <folderId/>
+      <fileName>test</fileName>
+      <offset/>
+      <limit/>
+    </requests>
+  </status>
+  <cabinetFilesSearchResult>
+    <resultCode>0</resultCode>
+    <fileAllCount>2</fileAllCount>
+    <fileCount>2</fileCount>
+    <files>
+      <file>
+        <FolderId>111111</FolderId>
+        <FolderName>folder</FolderName>
+        <FolderNode>1</FolderNode>
+        <FolderPath>/folder</FolderPath>
+        <FileId>22222222</FileId>
+        <FileName>test1</FileName>
+        <FileUrl>https://image.rakuten.co.jp/SHOP/cabinet/folder/test1.jpg</FileUrl>
+        <FilePath>test1.jpg</FilePath>
+        <FileType>1</FileType>
+        <FileSize>10.600</FileSize>
+        <FileWidth>512</FileWidth>
+        <FileHeight>512</FileHeight>
+        <FileAccessDate>0000-00-00</FileAccessDate>
+        <TimeStamp>2019-06-22 12:00:00</TimeStamp>
+      </file>
+      <file>
+        <FolderId>111111</FolderId>
+        <FolderName>folder</FolderName>
+        <FolderNode>1</FolderNode>
+        <FolderPath>/folder</FolderPath>
+        <FileId>33333333</FileId>
+        <FileName>test2</FileName>
+        <FileUrl>https://image.rakuten.co.jp/SHOP/cabinet/folder/test2.jpg</FileUrl>
+        <FilePath>test2.jpg</FilePath>
+        <FileType>1</FileType>
+        <FileSize>10.600</FileSize>
+        <FileWidth>512</FileWidth>
+        <FileHeight>512</FileHeight>
+        <FileAccessDate>0000-00-00</FileAccessDate>
+        <TimeStamp>2019-06-22 12:00:00</TimeStamp>
+      </file>
+    </files>
+  </cabinetFilesSearchResult>
+</result>

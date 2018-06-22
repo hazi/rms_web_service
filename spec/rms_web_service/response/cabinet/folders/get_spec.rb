@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe RmsWebService::Response::Cabinet::Folders::Get do
-  let(:api) { described_class.new(fixture("cabinet/folders/get.xml")) }
+  let(:api) { described_class.new(fixture("cabinet/folder/get.xml")) }
 
   describe "attributes" do
     it "should respond to SystemResult" do
@@ -30,10 +30,13 @@ describe RmsWebService::Response::Cabinet::Folders::Get do
       it { is_expected.to all(be_a(Hash)) }
 
       context "result value 1 folder only" do
-        let(:api) { described_class.new(fixture("cabinet/folders/get_one_folder.xml")) }
+        let(:api) { described_class.new(fixture("cabinet/folder/get_one_folder.xml")) }
 
         it { is_expected.to be_a(Array) }
+        it { is_expected.not_to be_empty }
         it { is_expected.to all(be_a(Hash)) }
+        it { is_expected.to all(have_key(:folder_node)) }
+        it { is_expected.to all(have_key(:folder_id)) }
       end
     end
   end

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <status>
+    <interfaceId>cabinet.file.update</interfaceId>
+    <systemStatus>OK</systemStatus>
+    <message>OK</message>
+    <requestId>0092d690-8444-4283-bbcd-f8fd579295f5</requestId>
+    <requests/>
+  </status>
+  <cabinetFileUpdateResult>
+    <resultCode>0</resultCode>
+  </cabinetFileUpdateResult>
+</result>
