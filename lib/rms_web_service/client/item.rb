@@ -3,8 +3,6 @@
 module RmsWebService
   module Client
     class Item < Base
-      Endpoint = "https://api.rms.rakuten.co.jp/es/1.0/"
-
       def get(item_url)
         request = connection("item/get").get { |req| req.params["itemUrl"] = item_url }
         ::RWS::Response::Item::Get.new(request.body)

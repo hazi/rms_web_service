@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <status>
+    <interfaceId>cabinet.folder.insert</interfaceId>
+    <systemStatus>OK</systemStatus>
+    <message>OK</message>
+    <requestId>ecaeac48-b640-49d4-b446-4adfa1921a79</requestId>
+    <requests/>
+  </status>
+  <cabinetFolderInsertResult>
+    <resultCode>0</resultCode>
+    <FolderId>1111111</FolderId>
+  </cabinetFolderInsertResult>
+</result>

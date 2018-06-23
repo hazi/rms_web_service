@@ -3,8 +3,6 @@
 module RmsWebService
   module Client
     class ShopManagement < Base
-      Endpoint = "https://api.rms.rakuten.co.jp/es/1.0/"
-
       def dsgn_navitemplate_list_get(opt={})
         request = connection("shopmngt/design/navitemplate/list/get").get do |req|
           req.params["layoutCommonId"] = opt[:layout_common_id] if opt.key?(:layout_common_id)
