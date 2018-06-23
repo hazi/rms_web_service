@@ -15,10 +15,6 @@ module RmsWebService
             set_attributes @result.dig(:cabinet_trashbox_file_revert_result)
           end
         end
-
-        def success?
-          @result_code == "0"
-        end
       end
     end
   end

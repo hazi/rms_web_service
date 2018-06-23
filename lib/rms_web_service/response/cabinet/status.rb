@@ -7,6 +7,10 @@ module RmsWebService
         def initialize(hash)
           set_attributes(hash.dig(:status))
         end
+
+        def success?
+          system_status == "OK"
+        end
       end
     end
   end

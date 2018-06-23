@@ -14,10 +14,6 @@ module RmsWebService
               Array.wrap(@result.dig(:cabinet_folders_get_result, :folders, :folder))
             )
           end
-
-          def success?
-            @result_code == "0"
-          end
         end
       end
     end
