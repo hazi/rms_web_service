@@ -25,8 +25,10 @@ describe RmsWebService::Response::Cabinet::Result do
 
     include_examples "response cabinet files"
 
-    it "should respond to FolderId" do
-      expect(api).to respond_to :folder_id
+    describe "attributes" do
+      it "should respond to FolderId" do
+        expect(api).to respond_to :folder_id
+      end
     end
   end
 
@@ -38,6 +40,24 @@ describe RmsWebService::Response::Cabinet::Result do
 
   context "endpoint cabinet/trashbox/file/revert" do
     let(:api) { described_class.new(fixture("cabinet/trashbox/file_revert.xml")) }
+
+    include_examples "response cabinet files"
+  end
+
+  context "endpoint cabinet/file/insert" do
+    let(:api) { described_class.new(fixture("cabinet/file/insert.xml")) }
+
+    include_examples "response cabinet files"
+
+    describe "attributes" do
+      it "should respond to FileId" do
+        expect(api).to respond_to :file_id
+      end
+    end
+  end
+
+  context "endpoint cabinet/file/insert" do
+    let(:api) { described_class.new(fixture("cabinet/file/delete.xml")) }
 
     include_examples "response cabinet files"
   end

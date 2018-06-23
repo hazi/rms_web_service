@@ -43,8 +43,21 @@ describe RmsWebService::Client::Cabinet do
       stub_request(:post, "https://api.rms.rakuten.co.jp/es/1.0/cabinet/file/insert")
         .to_return(status: 200, body: fixture("cabinet/file/insert.xml"))
     end
-    subject { client.file_insert({}) }
-    it { is_expected.to be_a RWS::Response::Cabinet::File::Insert }
+    let(:file) { double("upload_io") }
+
+    subject { client.file_insert(file: file, file_name: "test.jpg", folder_id: 1) }
+    it { is_expected.to be_a RWS::Response::Cabinet::Result }
+  end
+
+  describe "#upload" do
+    before do
+      stub_request(:post, "https://api.rms.rakuten.co.jp/es/1.0/cabinet/file/insert")
+        .to_return(status: 200, body: fixture("cabinet/file/insert.xml"))
+    end
+    let(:file) { double("upload_io") }
+
+    subject { client.upload(file: file, file_name: "test.jpg", folder_id: 1) }
+    it { is_expected.to be_a RWS::Response::Cabinet::Result }
   end
 
   describe "#file_delete" do
@@ -53,7 +66,16 @@ describe RmsWebService::Client::Cabinet do
         .to_return(status: 200, body: fixture("cabinet/file/delete.xml"))
     end
     subject { client.file_delete({}) }
-    it { is_expected.to be_a RWS::Response::Cabinet::File::Delete }
+    it { is_expected.to be_a RWS::Response::Cabinet::Result }
+  end
+
+  describe "#delete" do
+    before do
+      stub_request(:post, "https://api.rms.rakuten.co.jp/es/1.0/cabinet/file/delete")
+        .to_return(status: 200, body: fixture("cabinet/file/delete.xml"))
+    end
+    subject { client.delete({}) }
+    it { is_expected.to be_a RWS::Response::Cabinet::Result }
   end
 
   describe "#usage_get" do
@@ -62,7 +84,7 @@ describe RmsWebService::Client::Cabinet do
         .to_return(status: 200, body: fixture("cabinet/usage/get.xml"))
     end
     subject { client.usage_get }
-    it { is_expected.to be_a RWS::Response::Cabinet::Usage::Get }
+    it { is_expected.to be_a RWS::Response::Cabinet::Usage }
   end
 
   describe "#usage" do
@@ -71,7 +93,7 @@ describe RmsWebService::Client::Cabinet do
         .to_return(status: 200, body: fixture("cabinet/usage/get.xml"))
     end
     subject { client.usage }
-    it { is_expected.to be_a RWS::Response::Cabinet::Usage::Get }
+    it { is_expected.to be_a RWS::Response::Cabinet::Usage }
   end
 
   describe "#folders_get" do
@@ -80,7 +102,7 @@ describe RmsWebService::Client::Cabinet do
         .to_return(status: 200, body: fixture("cabinet/folder/get.xml"))
     end
     subject { client.folders_get }
-    it { is_expected.to be_a RWS::Response::Cabinet::Folders::Get }
+    it { is_expected.to be_a RWS::Response::Cabinet::Folders }
   end
 
   describe "#folders" do
@@ -89,7 +111,7 @@ describe RmsWebService::Client::Cabinet do
         .to_return(status: 200, body: fixture("cabinet/folder/get.xml"))
     end
     subject { client.folders }
-    it { is_expected.to be_a RWS::Response::Cabinet::Folders::Get }
+    it { is_expected.to be_a RWS::Response::Cabinet::Folders }
   end
 
   describe "#folder_files_get" do
