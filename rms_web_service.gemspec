@@ -7,18 +7,21 @@ require "rms_web_service/version"
 Gem::Specification.new do |spec|
   spec.name          = "rms_web_service"
   spec.version       = RmsWebService::VERSION
-  spec.authors       = ["kamiya54"]
-  spec.email         = ["kamiya54@gmail.com"]
+  spec.authors       = ["yuhei mukoyama"]
+  spec.email         = ["yuhei.mukoyama@gmail.com"]
   spec.summary       = %q{Ruby wrapper for RMS Web Service.}
   spec.description   = %q{Ruby wrapper for RMS Web Service.}
-  spec.homepage      = "https://github.com/kamiya54/rms_web_service"
+  spec.homepage      = "https://github.com/hazi/rms_web_service"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = %x[git ls-files -z].split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) } -
+  spec.files         = %x[git ls-files -z].split("\x0").reject { |f| f.match(%r{^(test|spec|features|bin)/}) } -
                        %w[.rubocop.yml .travis.yml]
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.bindir        = "exe"
+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.rdoc_options = ["--main", "README.md"]
 
   spec.add_dependency "faraday"
   spec.add_dependency "nokogiri"
