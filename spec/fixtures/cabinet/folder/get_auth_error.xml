@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <status>
+    <interfaceId>cabinet.folders.get</interfaceId>
+    <systemStatus>NG</systemStatus>
+    <message>AuthError</message>
+    <requestId>ec63c4a2-f2f9-486a-b868-e46e57157796</requestId>
+    <requests>
+      <offset>1</offset>
+      <limit>100</limit>
+    </requests>
+  </status>
+</result>

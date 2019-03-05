@@ -97,12 +97,22 @@ describe RmsWebService::Client::Cabinet do
   end
 
   describe "#folders_get" do
+    let(:fixture_file) { fixture("cabinet/folder/get.xml") }
     before do
       stub_request(:get, "https://api.rms.rakuten.co.jp/es/1.0/cabinet/folders/get?limit=100&offset=1")
-        .to_return(status: 200, body: fixture("cabinet/folder/get.xml"))
+        .to_return(status: 200, body: fixture_file)
     end
     subject { client.folders_get }
     it { is_expected.to be_a RWS::Response::Cabinet::Folders }
+
+    context 'AuthError' do
+      let(:fixture_file) { fixture("cabinet/folder/get_auth_error.xml") }
+
+      it { is_expected.to be_a RWS::Response::Cabinet::Folders }
+      it do
+        is_expected.to have_attributes(status: have_attributes(success?: false))
+      end
+    end
   end
 
   describe "#folders" do
