@@ -23,6 +23,7 @@ module RmsWebService
         # 引数の Hash を元にメソッドを定義
         # @param args [Hash]
         def set_attributes(args)
+          return if args.nil?
           args.each { |key, value| set_attribute(key, value) }
         end
 
